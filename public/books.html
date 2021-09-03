@@ -4,4 +4,97 @@
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <title>Books List</title>
 </head>
+<body>
+  <div class="card text-center">
+    <div class="card-header">
+      <ul class="nav nav-tabs card-header-tabs">
+        <li class="nav-item">
+          <a class="nav-link" href="C:\Users\13176\github-classroom\iu-msis\1-html-review-andrew-morozov\public\index.html" style="color:blue">Index</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link active" href="C:\Users\13176\github-classroom\iu-msis\1-html-review-andrew-morozov\public\books.html" style="background-color:blue;color:white">Table of Books</a>
+        </li>
+        <li class="nav-item">
+          <a class="nav-link" href="C:\Users\13176\github-classroom\iu-msis\1-html-review-andrew-morozov\public\userInfo.html" style="color:blue">User Information</a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</body>
+<h1 style="background-color:blue;color:lightgrey">
+  Table of Books
+</h1>
+<body style="background-color:lightgrey;color:blue;">
+  <table class="table">
+    <thead>
+      <tr style="color:blue">
+        <th scope="col">Title</th>
+        <th scope="col">Author</th>
+        <th scope="col">Year Published</th>
+        <th scope="col">Publisher</th>
+        <th scope="col">Page Count</th>
+        <th scope="col">MSRP</th>
+      </tr>
+    </thead>
+    <tbody style="color:blue">
+      <tr>
+        <th scope="row">1</th>
+        <td>The Hunger Games</td>
+        <td>Suzanne Collins</td>
+        <td>2008</td>
+        <td>Scholastic Press</td>
+        <td>7.99</td>
+      </tr>
+      <tr>
+        <th scope="row">2</th>
+        <td>Harry Potter and the Sorcerer's Stone</td>
+        <td>J. K. Rowling</td>
+        <td>1997</td>
+        <td>Bloomsbury</td>
+        <td>6.99</td> 
+      </tr>
+      <tr>
+        <th scope="row">3</th>
+        <td>The Alchemist</td>
+        <td>Paulo Coelho</td>
+        <td>1988</td>
+        <td>HarperCollins</td>
+        <td>8.99</td>
+      </tr>
+      <tr>
+        <th scope="row">4</th>
+        <td>The Da Vinci Code</td>
+        <td>Robert Langdon</td>
+        <td>2003</td>
+        <td>Doubleday</td>
+        <td>8.99</td>
+      </tr>
+    </tbody>
+  </table>
+  <form>
+    <div class="form-group">
+      <label for="inputTitle">Title</label>
+      <input type="text" class="form-control" id="inputTitle" aria-describedby="titleHelp" placeholder="Enter Title">
+    </div>
+    <div class="form-group">
+      <label for="inputAuthor">Author</label>
+      <input type="text" class="form-control" id="inputAuthor" placeholder="Enter Author Name">
+    </div>
+    <div class="form-group">
+      <label for="inputYearPublished">Year Published</label>
+      <input type="text" class="form-control" id="inputYearPublished" placeholder="Enter Year Published">
+    </div>
+    <div class="form-group">
+      <label for="inputPublisher">Pubisher</label>
+      <input type="text" class="form-control" id="inputPublisher" placeholder="Enter Publisher">
+    </div>
+    <div class="form-group">
+      <label for="inputMSRP">MSRP</label>
+      <input type="text" class="form-control" id="inputMSRP" placeholder="Enter MSRP">
+    </div>
+    <button type="submit" style = "background-color:blue; color:white">Add to Table</button>
+  </form>
+  <br>
+  <br>
+</body>
 </html>
