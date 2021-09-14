@@ -2,6 +2,7 @@
 <html>
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+  <link href="app\public\css\layout.css" rel="stylesheet" type="text/css">
   <title>Books List</title>
 </head>
 <body>
@@ -12,7 +13,7 @@
           <a class="nav-link" href="index.html" style="color:blue">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="books.html" style="background-color:blue;color:white">Table of Books</a>
+          <a class="nav-link active" href="table.html" style="background-color:blue;color:white">Table of Books</a>
         </li>
         <li class="nav-item">
           <a class="nav-link" href="userInfo.html" style="color:blue">User Information</a>
@@ -24,16 +25,15 @@
 <h1 id="booksHeader">
   Table of Books
   <figure>
-
     <a href="img\book.png"  target="_blank"><img src="img\book.png" height=75 width=75/></a> 
-
     <figcaption style="font-size: small";>https://www.iconpacks.net/free-icon/opened-book-3163.html</figcaption>
     </figure>
 </h1>
 <body style="background-color:lightgrey;color:blue;">
-  <table class="bookTable">
+  <table id="bookTable" class="bookTable">
     <thead>
-      <tr style="color:blue">
+      <tr>
+        <th scope="col">Row</th>
         <th scope="col">Title</th>
         <th scope="col">Author</th>
         <th scope="col">Year Published</th>
@@ -42,13 +42,14 @@
         <th scope="col">MSRP</th>
       </tr>
     </thead>
-    <tbody style="color:blue">
+    <tbody>
       <tr>
         <th scope="row">1</th>
         <td>The Hunger Games</td>
         <td>Suzanne Collins</td>
         <td>2008</td>
         <td>Scholastic Press</td>
+        <td>374</td>
         <td>7.99</td>
       </tr>
       <tr>
@@ -57,6 +58,7 @@
         <td>J. K. Rowling</td>
         <td>1997</td>
         <td>Bloomsbury</td>
+        <td>223</td>
         <td>6.99</td> 
       </tr>
       <tr>
@@ -65,6 +67,7 @@
         <td>Paulo Coelho</td>
         <td>1988</td>
         <td>HarperCollins</td>
+        <td>208</td>
         <td>8.99</td>
       </tr>
       <tr>
@@ -73,6 +76,7 @@
         <td>Robert Langdon</td>
         <td>2003</td>
         <td>Doubleday</td>
+        <td>416</td>
         <td>8.99</td>
       </tr>
     </tbody>
@@ -103,4 +107,12 @@
   <br>
   <br>
 </body>
+
+<script src="js/tablesort.min.js"></script>
+<script>
+  new Tablesort(document.getElementById('bookTable'));
+</script>
+<script>
+  // tablesort plug-in from http://tristen.ca/tablesort/demo/ 
+</script>
 </html>
