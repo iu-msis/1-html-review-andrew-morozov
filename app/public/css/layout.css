@@ -8,6 +8,11 @@
     color:lightgrey
 }
 
+#homeTitle {
+    background-color:blue;
+    color:lightgrey
+}
+
 /**tablesort**/
 
 th[role=columnheader]:not(.no-sort) {
