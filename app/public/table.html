@@ -10,26 +10,26 @@
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link" href="index.html" style="color:blue">Home</a>
+          <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="table.html" style="background-color:blue;color:white">Table of Books</a>
+          <a class="nav-link active" href="table.html">Table of Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="userInfo.html" style="color:blue">User Information</a>
+          <a class="nav-link" href="userInfo.html">User Information</a>
         </li>
       </ul>
     </div>
   </div>
 </body>
-<h1 id="booksHeader">
+<h1 id="header">
   Table of Books
   <figure>
     <a href="img\book.png"  target="_blank"><img src="img\book.png" height=75 width=75/></a> 
-    <figcaption style="font-size: small";>https://www.iconpacks.net/free-icon/opened-book-3163.html</figcaption>
+    <figcaption id="urlLink";>https://www.iconpacks.net/free-icon/opened-book-3163.html</figcaption>
     </figure>
 </h1>
-<body style="background-color:lightgrey;color:blue;">
+<body id="bodyText">
   <table id="bookTable" class="bookTable">
     <thead>
       <tr>
@@ -102,10 +102,8 @@
       <label for="inputMSRP">MSRP</label>
       <input type="text" class="form-control" id="inputMSRP" placeholder="Enter MSRP">
     </div>
-    <button type="submit" style = "background-color:blue; color:white">Add to Table</button>
+    <button type="submit" id="button">Add to Table</button>
   </form>
-  <br>
-  <br>
 </body>
 
 <script src="js/tablesort.min.js"></script>

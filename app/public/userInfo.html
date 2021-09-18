@@ -1,48 +1,63 @@
 <!doctype html>
-<html>
+<html lang="en">
 <head>
   <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
   <link href="css\layout.css" rel="stylesheet" type="text/css">
+
   <title>User Information</title>
+
+  <script src="https://unpkg.com/vue@next"></script>
+  
 </head>
 <body>
   <div class="card text-center">
     <div class="card-header">
       <ul class="nav nav-tabs card-header-tabs">
         <li class="nav-item">
-          <a class="nav-link" href="index.html" style="color:blue">Home</a>
+          <a class="nav-link" href="index.html">Home</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link" href="table.html" style="color:blue">Table of Books</a>
+          <a class="nav-link" href="table.html">Table of Books</a>
         </li>
         <li class="nav-item">
-          <a class="nav-link active" href="userInfo.html" style="background-color:blue;color:white">User Information</a>
+          <a class="nav-link active" href="userInfo.html">User Information</a>
         </li>
       </ul>
     </div>
   </div>
-</body>
-<h1 class = "userInfoHeader">
+
+<h1 id="header">
   User Information 
   <figure>
     <a href="img\book.png"  target="_blank"><img src="img\book.png" height=75 width=75/></a> 
-    <figcaption style="font-size: small";>hhttps://icon-icons.com/icon/person/110935</figcaption>
+    <figcaption id="urlLink";>hhttps://icon-icons.com/icon//110935</figcaption>
     </figure>
+    
 </h1>
-<body style="background-color:lightgrey;color:blue;">
-    <figure>
-    <a href="img\Terry Fields.jpg"  target="_blank"><img src="img\Terry Fields.jpg"/></a> 
-    <figcaption style="font-size: small";>https://randomuser.me/</figcaption>
-    </figure>
-    <br>
-    Name: Terry Fields <br>
-    Country of Origin: United States <br>
-    Birthdate: 9/1/1998 <br>
-    Age: 23 <br>
-    Email Address: <a href = "mailto: terry.fields@example.com">terry.fields@example.com </a>
-  <br>
-  <br>
-  <br>
-  <br>
+<p id= "pText">
+  
+  <figure>
+  <a href="img\Terry Fields.jpg"  target="_blank"><img src="img\Terry Fields.jpg"/></a> 
+  <figcaption id="urlLink";>https://randomuser.me/</figcaption>
+  </figure>
+
+  <ol id="table">
+        <p v-for="offer in offers">
+            <li>{{person.picture.large}}</li>
+            <li>Name: {{person.name.first}} {{person.name.last}}</li>
+            <li>Country of Origin: {{person.location.country}} </li>
+            <li>Birthdate: {{person.dob.date}}</li>
+            <li>Age: {{person.dob.age}}</li>
+            <li>Email Address: <a v-bind:href="'mailto:'+person.email">{{person.email}}</li>
+
+          </p>
+  </ol>
+
+</p>
+
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.1.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-U1DAWAznBHeqEIlVSCgzq+c9gqGAJn5c/t99JyeKa9xxaYpSvHU5awsuZVVFIhvj" crossorigin="anonymous"></script>
+
+  <script src="js/userInfo.js"></script>
+
 </body>
 </html>

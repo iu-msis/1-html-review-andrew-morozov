@@ -1,19 +1,35 @@
-#booksHeader {
+#header {
     background-color:blue;
-    color:lightgrey
+    color:white
 }
 
-.userInfoHeader {
-    background-color:blue;
-    color:lightgrey
+#bodyText {
+	background-color:white;
+	color:blue;
 }
 
-#homeTitle {
-    background-color:blue;
-    color:lightgrey
+#pText {
+	background-color:white;
+	color:blue;
 }
 
-/**tablesort**/
+#urlLink {
+	font-size: small
+}
+
+#button {
+	background-color:blue; 
+	color:white
+}
+
+.nav-link {
+	color:blue
+}
+
+
+
+
+/**tablsort**/
 
 th[role=columnheader]:not(.no-sort) {
 	cursor: pointer;
