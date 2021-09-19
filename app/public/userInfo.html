@@ -30,26 +30,20 @@
   User Information 
   <figure>
     <a href="img\book.png"  target="_blank"><img src="img\book.png" height=75 width=75/></a> 
-    <figcaption id="urlLink";>hhttps://icon-icons.com/icon//110935</figcaption>
+    <figcaption id="urlLink";>https://icon-icons.com/icon//110935</figcaption>
     </figure>
     
 </h1>
 <p id= "pText">
-  
-  <figure>
-  <a href="img\Terry Fields.jpg"  target="_blank"><img src="img\Terry Fields.jpg"/></a> 
-  <figcaption id="urlLink";>https://randomuser.me/</figcaption>
-  </figure>
 
-  <ol id="table">
-        <p v-for="offer in offers">
-            <li>{{person.picture.large}}</li>
+  <ol id="table" >
+        <p v-for="offer">
+            <li><a v-bind:href="person.picture.large"  target="_blank"><img v-bind:src="person.picture.large"/> <p id="urlLink">{{person.picture.large}}</p></a></li>
             <li>Name: {{person.name.first}} {{person.name.last}}</li>
             <li>Country of Origin: {{person.location.country}} </li>
             <li>Birthdate: {{person.dob.date}}</li>
             <li>Age: {{person.dob.age}}</li>
             <li>Email Address: <a v-bind:href="'mailto:'+person.email">{{person.email}}</li>
-
           </p>
   </ol>
 
