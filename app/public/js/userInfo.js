@@ -4,6 +4,18 @@ const Offer = {
         "person": {},
         }
     },
+
+    computed: {
+      prettyBirthday() {
+        return dayjs(this.person.dob.date)
+        .format('D MMM YYYY');
+      }
+    },
+
+    methods: {
+
+    },
+
     created() {
         console.log("A");
 
