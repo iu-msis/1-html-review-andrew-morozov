@@ -37,16 +37,24 @@
 </h1>
 <p>
 
+  <form v-on:submit.prevent="fetchUserData">
+    <button type="submit">Reload</button>
+  </form>
   <div id="table">
-        <p v-for="offer">
-            <p><a v-bind:href="person.picture.large"  target="_blank"><img v-bind:src="person.picture.large" alt="random image of person"/> <p id="urlLink">{{person.picture.large}}</p></a></p>
-            <p>Name: {{person.name.first}} {{person.name.last}}</p>
-            <p>Country of Origin: {{person.location.country}} </p>
-            <p>Birthdate: {{prettyBirthday}}</p>
-            <p>Age: {{person.dob.age}}</p>
-            <p>Email Address: <a v-bind:href="'mailto:'+person.email">{{person.email}}</p>
-          </p>
-   </div>
+    <div v-if="person">
+        <div>
+          <a v-bind:href="person.picture.large"  target="_blank">
+          <img v-bind:src="person.picture.large" 
+          alt="random image of person"/>
+            <p id="urlLink">{{person.picture.large}}</p></a>
+        </div>
+        <p>Name: {{person.name.first}} {{person.name.last}}</p>
+        <p>Country of Origin: {{person.location.country}} </p>
+        <p>Birthdate: {{prettyBirthday}}</p>
+        <p>Age: {{person.dob.age}}</p>
+        <p>Email Address: <a v-bind:href="'mailto:' + person.email">{{person.email}}</p>
+    </div>
+  </div>
 
 </p>
   
