@@ -14,9 +14,25 @@ const Offer = {
 
     methods: {
 
-    },
+       fetchBooksData() {
+            fetch('/api/books/')
+            .then( response => response.json() )
+            .then( (responseJson) => {
+                console.log(responseJson);
+                this.books = responseJson;
+            })
+            .catch( (err) => {
+                console.error(err);
+            })
+
+      }
+
+    }, 
 
     created() {
+
+      this.fetchBooksData();
+
         console.log("A");
 
         fetch('https://randomuser.me/api/')
@@ -35,3 +51,4 @@ const Offer = {
   }
   
 Vue.createApp(Offer).mount('#table');
+Vue.createApp(Offer).mount('#bookTable');

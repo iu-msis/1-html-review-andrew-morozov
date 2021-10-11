@@ -1,0 +1,40 @@
+{
+    "books": [
+        {
+            "ID": 1,
+            "Title": "The Hunger Games",
+            "Author": "Suzanne Collins",
+            "Year Published": "2008",
+            "Publisher":  "Scholastic Press",
+            "Page Count": "374",
+            "MSRP": "7.99" 
+        },
+        {
+            "ID": 2,
+            "Title": "Harry Potter and the Sorcerer's Stone",
+            "Author": "J. K. Rowling",
+            "Year Published": "1997",
+            "Publisher":  "Bloomsbury",
+            "Page Count": "223",
+            "MSRP": "6.99" 
+        },
+        {
+            "ID": 3,
+            "Title": "The Alchemist",
+            "Author": "Paulo Coelho",
+            "Year Published": "1988",
+            "Publisher":  "HarperCollins",
+            "Page Count": "208",
+            "MSRP": "8.99" 
+        },
+        {
+            "ID": 4,
+            "Title": "The Da Vinci Code",
+            "Author": "Robert Langdon",
+            "Year Published": "2003",
+            "Publisher":  "Doubleday",
+            "Page Count": "416",
+            "MSRP": "8.99" 
+        }
+    ]
+}
