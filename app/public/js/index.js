@@ -1,7 +1,17 @@
 const Offer = {
     data() {
       return {
-        "person": undefined,
+        "person": {},
+        "books": {
+          ID: {},
+          Title: {},
+          Author: {},
+          YearPublished: {},
+          Publisher: {},
+          PageCount: {},
+          MSRP: {}
+        },
+        "offers": []
         }
     },
 
@@ -23,32 +33,35 @@ const Offer = {
             })
             .catch( (err) => {
                 console.error(err);
-            })
+            })   
+      }, 
+      
+        fetchUserData() {
+          console.log("A");
 
-      }
+          fetch('https://randomuser.me/api/')
+          .then(response => response.json())
+          .then((parsedJson) => {
+              console.log(parsedJson);
+              this.person = parsedJson.results[0]
+              console.log("C");
+          })
+          .catch( err => {
+              console.error(err)
+          })
+  
+          console.log("B");
+        }
+
 
     }, 
 
     created() {
 
       this.fetchBooksData();
+      this.fetchUserData();
 
-        console.log("A");
-
-        fetch('https://randomuser.me/api/')
-        .then(response => response.json())
-        .then((parsedJson) => {
-            console.log(parsedJson);
-            this.person = parsedJson.results[0]
-            console.log("C");
-        })
-        .catch( err => {
-            console.error(err)
-        })
-
-        console.log("B");
     }
   }
   
 Vue.createApp(Offer).mount('#table');
-Vue.createApp(Offer).mount('#bookTable');

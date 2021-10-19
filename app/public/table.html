@@ -35,8 +35,9 @@
     </figure>
 </h1>
 <body id="bodyText">
-  
-  <table id="bookTable" class="bookTable" v-for="offer in offers">
+  <h2>Books Table</h2>
+  <div id="table">
+  <table id="bookTable" class="bookTable">
     <thead>
       <tr>
         <th scope="col">ID</th>
@@ -49,44 +50,18 @@
       </tr>
     </thead>
     <tbody>
-      <tr>
-        <th scope="row">1</th>
-        <td>{{ offer.ID }}</td>
-        <td>Suzanne Collins</td>
-        <td>2008</td>
-        <td>Scholastic Press</td>
-        <td>374</td>
-        <td>7.99</td>
+      <tr v-for="book in books">
+        <td>{{book.ID}}</td>
+        <td>{{book.Title}}</td>
+        <td>{{book.Author}}</td> 
+        <td>{{book.YearPublished}}</td>
+        <td>{{book.Publisher}}</td>
+        <td>{{book.PageCount}}</td>
+        <td>{{book.MSRP}}</td>
       </tr>
-      <tr>
-        <th scope="row">2</th>
-        <td>Harry Potter and the Sorcerer's Stone</td>
-        <td>J. K. Rowling</td>
-        <td>1997</td>
-        <td>Bloomsbury</td>
-        <td>223</td>
-        <td>6.99</td> 
-      </tr>
-      <tr>
-        <th scope="row">3</th>
-        <td>The Alchemist</td>
-        <td>Paulo Coelho</td>
-        <td>1988</td>
-        <td>HarperCollins</td>
-        <td>208</td>
-        <td>8.99</td>
-      </tr>
-      <tr>
-        <th scope="row">4</th>
-        <td>The Da Vinci Code</td>
-        <td>Robert Langdon</td>
-        <td>2003</td>
-        <td>Doubleday</td>
-        <td>416</td>
-        <td>8.99</td>
-      </tr>
-    </tbody>
+  </tbody>
   </table>
+  <h3>Insert A New Book</h3>
   <form>
     <div class="form-group">
       <label for="inputTitle">Title</label>
@@ -110,6 +85,7 @@
     </div>
     <button type="submit" id="button">Add to Table</button>
   </form>
+</div>
 
 
       <!-- Bootstrap Bundle with Popper -->
