@@ -25,12 +25,11 @@ require("class/DbConnection.php");
 $db = DbConnection::getConnection();
 
 $stmt = $db->prepare( 
-  'INSERT INTO books (ID, Title, Author, YearPublished, Publisher, PageCount, MSRP) 
-  VALUES (?, ?, ?, ?, ?, ?, ?)'
+  'INSERT INTO books (Title, Author, YearPublished, Publisher, PageCount, MSRP) 
+  VALUES (?, ?, ?, ?, ?, ?)'
 );
 
-$stmt->execute([ 
-  $_POST['ID'], 
+$stmt->execute([  
   $_POST['Title'],
   $_POST['Author'],
   $_POST['YearPublished'],
