@@ -1,11 +1,19 @@
 const Offer = {
     data() {
       return {
-        person: {},
-        books: [],
-        offers: [],
-        booksForm: {},
-        selectedBook: null
+        "person": {},
+        "books": {
+          ID: {},
+          Title: {},
+          Author: {},
+          YearPublished: {},
+          Publisher: {},
+          PageCount: {},
+          MSRP: {}
+        },
+        "offers": [],
+        "booksForm": {},
+        "selectedBook": null
         }
     },
 
@@ -60,18 +68,20 @@ const Offer = {
           .then( response => response.json() )
           .then( json => {
               console.log("Returned from post:", json);
-              this.books = json;
+              this.books =json;
               this.booksForm = {};
               this.handleResetEdit();
           });          
       }, 
-      postEditBook(evt) {
+      postEditOffer(evt) {
+        this.offerForm.id = this.selectedOffer.id;
+        this.offerForm.studentId = this.selectedStudent.id;        
         
-        console.log("Editing!", this.booksForm);
+        console.log("Editing!", this.offerForm);
 
-        fetch('api/books/update.php', {
+        fetch('api/offer/update.php', {
             method:'POST',
-            body: JSON.stringify(this.booksForm),
+            body: JSON.stringify(this.offerForm),
             headers: {
               "Content-Type": "application/json; charset=utf-8"
             }
@@ -80,21 +90,21 @@ const Offer = {
           .then( json => {
             console.log("Returned from post:", json);
             // TODO: test a result was returned!
-            this.books = json;
+            this.offers = json;
             
             // reset the form
             this.handleResetEdit();
           });
       },
 
-        postDeleteBook(o) {  
-          if ( !confirm("Are you sure you want to delete the book " + o.Title + "?") ) {
+        postDeleteOffer(o) {  
+          if ( !confirm("Are you sure you want to delete the offer from " + o.companyName + "?") ) {
               return;
           }  
           
           console.log("Delete!", o);
 
-          fetch('api/books/delete.php', {
+          fetch('api/offer/delete.php', {
               method:'POST',
               body: JSON.stringify(o),
               headers: {
@@ -105,7 +115,7 @@ const Offer = {
             .then( json => {
               console.log("Returned from post:", json);
               // TODO: test a result was returned!
-              this.books = json;
+              this.offers = json;
               
               // reset the form
               this.handleResetEdit();
@@ -113,29 +123,13 @@ const Offer = {
         },
 
        handleResetEdit() {
-          this.selectedBook = null;
-          this.booksForm = {};
+          this.selectedOffer = null;
+          this.offerForm = {};
       },
-        handleEditBook(book) {
-          this.selectedBook = book;
-          this.booksForm = Object.assign({}, this.selectedBook);
-    },
-        selectBook(o) {
-          if (o == this.selectedBook) {
-              return;
-          }
-          this.selectedBook = o;
-          this.books = [];
-          this.fetchBooksData(this.selectedBook);
-  },
-        postBook(evt) {
-            console.log ("Test:", this.selectedBook);
-          if (this.selectedBook) {
-              this.postEditBook(evt);
-          } else {
-              this.postNewBook(evt);
-          }
-        }
+        handleEditOffer(offer) {
+          this.selectedOffer = offer;
+          this.offerForm = Object.assign({}, this.selectedOffer);
+    }, 
 
 
     }, 

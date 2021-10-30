@@ -56,13 +56,13 @@
         <td>{{book.Publisher}}</td>
         <td>{{book.PageCount}}</td>
         <td>{{book.MSRP}}</td>
-        <td><button type="button" v-on:click="selectOfferToEdit(offer)" class="btn btn-outline-secondary btn-sm">Edit</button>
-          <button type="button" class="btn btn-outline-secondary btn-sm">Delete</button></td>
+        <td> <button type="button" v-on:click="handleEditBook(book)" class="btn btn-outline-secondary btn-sm">Edit</button>
+          <button type="button" v-on:click="postDeleteBook(book)" class="btn btn-outline-secondary btn-sm">Delete</button></td>
       </tr>
   </tbody>
   </table>
-  <h3>Insert A New Book</h3>
-  <form v-on:submit.prevent="postNewBook">
+  <h3>{{ selectedBook === null ? "Insert" : "Edit" }} New Book</h3>
+  <form v-on:submit.prevent="postBook">
     <div class="form-group">
       <label for="inputTitle">Title</label>
       <input type="text" v-model="booksForm.Title" class="form-control" id="inputTitle" aria-describedby="titleHelp" placeholder="Enter Title">
@@ -87,7 +87,10 @@
       <label for="inputMSRP">MSRP</label>
       <input type="text" v-model="booksForm.MSRP"class="form-control" id="inputMSRP" placeholder="Enter MSRP">
     </div>
-    <button type="submit" id="button">Add to Table</button>
+    <button type="submit" class="btn btn-primary">{{ selectedBook === null ? "Insert " : "Edit " }} Book</button>
+          <button type="submit" class="btn btn-primary"
+            v-if="selectedBook"
+            v-on:click="handleResetEdit"> Cancel Edit </button>
   </form>
 </div>
 
